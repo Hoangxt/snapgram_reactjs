@@ -49,3 +49,4 @@ Would you like to use TypeScript (recommended)? ... no / yes
 # Appwrite
 
 - npm install appwrite
+  [...]
