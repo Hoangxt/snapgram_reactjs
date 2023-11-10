@@ -50,3 +50,7 @@ Would you like to use TypeScript (recommended)? ... no / yes
 
 - npm install appwrite
   [...]
+
+# Storage & Database Design
+
+- npm install @tanstack/react-query
