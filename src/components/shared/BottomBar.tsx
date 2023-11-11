@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { bottombarLinks } from '@/constants';
 
-const Bottombar = () => {
+const BottomBar = () => {
   const { pathname } = useLocation();
 
   return (
@@ -33,4 +33,4 @@ const Bottombar = () => {
   );
 };
 
-export default Bottombar;
+export default BottomBar;

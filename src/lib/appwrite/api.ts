@@ -135,7 +135,7 @@ export async function createPost(post: INewPost) {
     // Convert tags into array
     const tags = post.tags?.replace(/ /g, '').split(',') || [];
 
-    // Create post
+    // Create post to appwrite database
     const newPost = await databases.createDocument(
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
@@ -149,7 +149,7 @@ export async function createPost(post: INewPost) {
         tags: tags,
       }
     );
-
+    // if failed to create post, delete file from appwrite storage
     if (!newPost) {
       await deleteFile(uploadedFile.$id);
       throw Error;
@@ -184,7 +184,7 @@ export function getFilePreview(fileId: string) {
       fileId,
       2000,
       2000,
-      'top',
+      'top', // where the crop should be applied (top, bottom, center, left, right)
       100
     );
 
@@ -201,7 +201,7 @@ export async function deleteFile(fileId: string) {
   try {
     await storage.deleteFile(appwriteConfig.storageId, fileId);
 
-    return { status: 'ok' };
+    return { status: 'Delete File Success!' };
   } catch (error) {
     console.log(error);
   }

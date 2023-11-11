@@ -54,3 +54,13 @@ Would you like to use TypeScript (recommended)? ... no / yes
 # Storage & Database Design
 
 - npm install @tanstack/react-query
+
+# Create Post
+
+1. CreatePost.tsx
+2. PostForm.tsx
+3. FileUploader.tsx
+
+- npm install react-dropzone
+
+* lib appwrite => api.ts[get] => queriesAndMutations.ts[use]
