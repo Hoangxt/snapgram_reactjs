@@ -267,6 +267,7 @@ export async function getPostById(postId?: string) {
 
 // ============================== UPDATE POST
 export async function updatePost(post: IUpdatePost) {
+  // check if user upload new file
   const hasFileToUpdate = post.file.length > 0;
 
   try {

@@ -71,3 +71,7 @@ lib appwrite => api.ts[get]
 create fuc likePost(), unlikePost() ,deleteSavedPost().
 queriesAndMutations.ts[use]
 => useuseLikePost(), useUnlikePost(), useDeleteSavedPost()
+
+# Update Post
+
+- getPostById api
