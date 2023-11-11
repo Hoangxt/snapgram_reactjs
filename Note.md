@@ -64,3 +64,10 @@ Would you like to use TypeScript (recommended)? ... no / yes
 - npm install react-dropzone
 
 * lib appwrite => api.ts[get] => queriesAndMutations.ts[use]
+
+# Post Card
+
+lib appwrite => api.ts[get]
+create fuc likePost(), unlikePost() ,deleteSavedPost().
+queriesAndMutations.ts[use]
+=> useuseLikePost(), useUnlikePost(), useDeleteSavedPost()

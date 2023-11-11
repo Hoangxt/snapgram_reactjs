@@ -141,6 +141,7 @@ export const useDeletePost = () => {
   });
 };
 
+// ============================== LIKE / UNLIKE POST
 export const useLikePost = () => {
   const queryClient = useQueryClient();
   return useMutation({
@@ -153,6 +154,7 @@ export const useLikePost = () => {
     }) => likePost(postId, likesArray),
     onSuccess: (data) => {
       queryClient.invalidateQueries({
+        // invalidate the query for the post
         queryKey: [QUERY_KEYS.GET_POST_BY_ID, data?.$id],
       });
       queryClient.invalidateQueries({

@@ -376,7 +376,7 @@ export async function savePost(userId: string, postId: string) {
     const updatedPost = await databases.createDocument(
       appwriteConfig.databaseId,
       appwriteConfig.savesCollectionId,
-      ID.unique(),
+      ID.unique(), // save record id
       {
         user: userId,
         post: postId,
@@ -401,7 +401,7 @@ export async function deleteSavedPost(savedRecordId: string) {
 
     if (!statusCode) throw Error;
 
-    return { status: 'Ok' };
+    return { status: 'DELETE SAVED POST OK' };
   } catch (error) {
     console.log(error);
   }
