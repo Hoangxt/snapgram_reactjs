@@ -72,6 +72,16 @@ create fuc likePost(), unlikePost() ,deleteSavedPost().
 queriesAndMutations.ts[use]
 => useuseLikePost(), useUnlikePost(), useDeleteSavedPost()
 
-# Update Post
+# Update Post and Post Detail
 
 - getPostById api
+
+# Explore Page and Search Function
+
+- getInfinitePosts api => useGetPosts
+- searchPosts api => useSearchPosts
+
+- create hooks fodder + useDebounce.ts
+
+- create infinite scroll
+  npm install react-intersection-observer
