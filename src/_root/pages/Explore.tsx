@@ -5,14 +5,15 @@ import {
   useGetPosts,
   useSearchPosts,
 } from '@/lib/react-query/querisAndMutations';
-import { Models } from 'appwrite';
+// import { Models } from 'appwrite';
 import { useState, useEffect } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
 export type SearchResultProps = {
   isSearchFetching: boolean;
-  searchedPosts: Models.Document;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchedPosts: any;
 };
 
 const SearchResults = ({
@@ -47,6 +48,7 @@ const Explore = () => {
     if (inView && !searchValue) {
       fetchNextPage();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView, searchValue]);
 
   if (!posts)
@@ -55,9 +57,9 @@ const Explore = () => {
         <Loader />
       </div>
     );
-  const shouldShowSearchresults = searchValue !== '';
+  const shouldShowSearchResults = searchValue !== '';
   const shouldShowPosts =
-    !shouldShowSearchresults && posts.pages.every((item) => item.length > 0);
+    !shouldShowSearchResults && posts.pages.every((item) => item.length > 0);
 
   return (
     <div className='explore-container'>
@@ -98,7 +100,7 @@ const Explore = () => {
       </div>
 
       <div>
-        {shouldShowSearchresults ? (
+        {shouldShowSearchResults ? (
           <SearchResults
             isSearchFetching={isSearchFetching}
             searchedPosts={searchedPosts}
